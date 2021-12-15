@@ -157,7 +157,7 @@ public interface SlotIterator {
 
         @Override
         public SlotIterator blacklist(SlotPos slotPos) {
-            return blacklist(slotPos.getRow(), slotPos.getColumn());
+            return blacklist(slotPos.row(), slotPos.column());
         }
 
         @Override

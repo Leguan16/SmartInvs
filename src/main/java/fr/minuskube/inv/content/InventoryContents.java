@@ -53,14 +53,14 @@ public interface InventoryContents {
 
     class Impl implements InventoryContents {
 
-        private SmartInventory inv;
-        private UUID player;
+        private final SmartInventory inv;
+        private final UUID player;
 
-        private ClickableItem[][] contents;
+        private final ClickableItem[][] contents;
 
-        private Pagination pagination = new Pagination.Impl();
-        private Map<String, SlotIterator> iterators = new HashMap<>();
-        private Map<String, Object> properties = new HashMap<>();
+        private final Pagination pagination = new Pagination.Impl();
+        private final Map<String, SlotIterator> iterators = new HashMap<>();
+        private final Map<String, Object> properties = new HashMap<>();
 
         public Impl(SmartInventory inv, UUID player) {
             this.inv = inv;
@@ -90,7 +90,7 @@ public interface InventoryContents {
 
         @Override
         public SlotIterator newIterator(String id, SlotIterator.Type type, SlotPos startPos) {
-            return newIterator(id, type, startPos.getRow(), startPos.getColumn());
+            return newIterator(id, type, startPos.row(), startPos.column());
         }
 
         @Override
@@ -100,7 +100,7 @@ public interface InventoryContents {
 
         @Override
         public SlotIterator newIterator(SlotIterator.Type type, SlotPos startPos) {
-            return newIterator(type, startPos.getRow(), startPos.getColumn());
+            return newIterator(type, startPos.row(), startPos.column());
         }
 
         @Override
@@ -110,7 +110,7 @@ public interface InventoryContents {
         public Optional<SlotPos> firstEmpty() {
             for (int row = 0; row < contents.length; row++) {
                 for(int column = 0; column < contents[0].length; column++) {
-                    if(!this.get(row, column).isPresent())
+                    if(this.get(row, column).isEmpty())
                         return Optional.of(new SlotPos(row, column));
                 }
             }
@@ -130,7 +130,7 @@ public interface InventoryContents {
 
         @Override
         public Optional<ClickableItem> get(SlotPos slotPos) {
-            return get(slotPos.getRow(), slotPos.getColumn());
+            return get(slotPos.row(), slotPos.column());
         }
 
         @Override
@@ -147,7 +147,7 @@ public interface InventoryContents {
 
         @Override
         public InventoryContents set(SlotPos slotPos, ClickableItem item) {
-            return set(slotPos.getRow(), slotPos.getColumn(), item);
+            return set(slotPos.row(), slotPos.column(), item);
         }
 
         @Override
@@ -214,7 +214,7 @@ public interface InventoryContents {
 
         @Override
         public InventoryContents fillRect(SlotPos fromPos, SlotPos toPos, ClickableItem item) {
-            return fillRect(fromPos.getRow(), fromPos.getColumn(), toPos.getRow(), toPos.getColumn(), item);
+            return fillRect(fromPos.row(), fromPos.column(), toPos.row(), toPos.column(), item);
         }
 
         @SuppressWarnings("unchecked")
