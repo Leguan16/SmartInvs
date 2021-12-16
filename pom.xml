@@ -11,28 +11,32 @@
     <name>SmartInvs-1.17.1</name>
 
     <description>A more recent and updated version of SmartInvs by MinusKube</description>
-    <url>http://github.com/Leguan16/SmartInvs</url>
+    <url>https://github.com/Leguan16/SmartInvs</url>
 
     <licenses>
         <license>
-            <name>The Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <name>GNU General Public License v3.0</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
         </license>
     </licenses>
 
     <developers>
         <developer>
-            <name>Noah Bernhard</name>
+            <id>minuskube</id>
+            <name>MinusKube</name>
+            <email>minuskube@gmail.com</email>
+        </developer>
+        <developer>
+            <id>leguan16</id>
+            <name>Leguan16</name>
             <email>longboard.noah@gmail.com</email>
-            <organization>org.github.leguan16</organization>
-            <organizationUrl>http://github.com/Leguan16/</organizationUrl>
         </developer>
     </developers>
 
     <scm>
         <connection>scm:git:git://github.com/Leguan16/SmartInvs</connection>
         <developerConnection>scm:git:ssh://github.com:Leguan16/SmartInvs.git</developerConnection>
-        <url>http://github.com/Leguan16/SmartInvs</url>
+        <url>https://github.com/Leguan16/SmartInvs/tree/maven</url>
     </scm>
 
     <properties>
