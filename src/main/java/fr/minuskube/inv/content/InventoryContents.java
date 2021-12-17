@@ -90,7 +90,7 @@ public interface InventoryContents {
 
         @Override
         public SlotIterator newIterator(String id, SlotIterator.Type type, SlotPos startPos) {
-            return newIterator(id, type, startPos.row(), startPos.column());
+            return newIterator(id, type, startPos.getRow(), startPos.getColumn());
         }
 
         @Override
@@ -100,7 +100,7 @@ public interface InventoryContents {
 
         @Override
         public SlotIterator newIterator(SlotIterator.Type type, SlotPos startPos) {
-            return newIterator(type, startPos.row(), startPos.column());
+            return newIterator(type, startPos.getRow(), startPos.getColumn());
         }
 
         @Override
@@ -130,7 +130,7 @@ public interface InventoryContents {
 
         @Override
         public Optional<ClickableItem> get(SlotPos slotPos) {
-            return get(slotPos.row(), slotPos.column());
+            return get(slotPos.getRow(), slotPos.getColumn());
         }
 
         @Override
@@ -147,7 +147,7 @@ public interface InventoryContents {
 
         @Override
         public InventoryContents set(SlotPos slotPos, ClickableItem item) {
-            return set(slotPos.row(), slotPos.column(), item);
+            return set(slotPos.getRow(), slotPos.getColumn(), item);
         }
 
         @Override
@@ -214,7 +214,7 @@ public interface InventoryContents {
 
         @Override
         public InventoryContents fillRect(SlotPos fromPos, SlotPos toPos, ClickableItem item) {
-            return fillRect(fromPos.row(), fromPos.column(), toPos.row(), toPos.column(), item);
+            return fillRect(fromPos.getRow(), fromPos.getColumn(), toPos.getRow(), toPos.getColumn(), item);
         }
 
         @SuppressWarnings("unchecked")
@@ -237,6 +237,11 @@ public interface InventoryContents {
 
         private void update(int row, int column, ItemStack item) {
             Player currentPlayer = Bukkit.getPlayer(player);
+
+            if (currentPlayer == null) {
+                return;
+            }
+
             if(!inv.getManager().getOpenedPlayers(inv).contains(currentPlayer))
                 return;
 

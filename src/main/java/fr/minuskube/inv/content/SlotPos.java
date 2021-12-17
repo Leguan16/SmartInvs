@@ -1,6 +1,14 @@
 package fr.minuskube.inv.content;
 
-public record SlotPos(int row, int column) {
+public class SlotPos {
+
+    int row;
+    int column;
+
+    public SlotPos(int row, int column) {
+        this.row = row;
+        this.column = column;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -26,4 +34,11 @@ public record SlotPos(int row, int column) {
         return new SlotPos(row, column);
     }
 
+    public int getRow() {
+        return row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
 }
