@@ -3,6 +3,7 @@ package fr.minuskube.inv.opener;
 import com.google.common.base.Preconditions;
 import fr.minuskube.inv.InventoryManager;
 import fr.minuskube.inv.SmartInventory;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
@@ -18,9 +19,9 @@ public class ChestInventoryOpener implements InventoryOpener {
                 "The row count for the chest inventory must be between 1 and 6, found: %s", inv.getRows());
 
         InventoryManager manager = inv.getManager();
-        Inventory handle = Bukkit.createInventory(player, inv.getRows() * inv.getColumns(), inv.getTitle());
+        Inventory handle = Bukkit.createInventory(player, inv.getRows() * inv.getColumns(), Component.text(inv.getTitle()));
 
-        fill(handle, manager.getContents(player).get());
+        manager.getContents(player).ifPresent(inventoryContents -> fill(handle, inventoryContents));
 
         player.openInventory(handle);
         return handle;

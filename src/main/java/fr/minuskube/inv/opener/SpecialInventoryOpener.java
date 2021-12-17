@@ -3,6 +3,7 @@ package fr.minuskube.inv.opener;
 import com.google.common.collect.ImmutableList;
 import fr.minuskube.inv.InventoryManager;
 import fr.minuskube.inv.SmartInventory;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
@@ -27,9 +28,9 @@ public class SpecialInventoryOpener implements InventoryOpener {
     @Override
     public Inventory open(SmartInventory inv, Player player) {
         InventoryManager manager = inv.getManager();
-        Inventory handle = Bukkit.createInventory(player, inv.getType(), inv.getTitle());
+        Inventory handle = Bukkit.createInventory(player, inv.getType(), Component.text(inv.getTitle()));
 
-        fill(handle, manager.getContents(player).get());
+        manager.getContents(player).ifPresent(inventoryContents -> fill(handle, inventoryContents));
 
         player.openInventory(handle);
         return handle;

@@ -15,6 +15,7 @@ public interface SlotIterator {
     }
 
     Optional<ClickableItem> get();
+
     SlotIterator set(ClickableItem item);
 
     SlotIterator previous();
@@ -38,15 +39,15 @@ public interface SlotIterator {
 
     class Impl implements SlotIterator {
 
-        private InventoryContents contents;
-        private SmartInventory inv;
+        private final InventoryContents contents;
+        private final SmartInventory inv;
 
-        private Type type;
+        private final Type type;
         private boolean started = false;
         private boolean allowOverride = true;
         private int row, column;
 
-        private Set<SlotPos> blacklisted = new HashSet<>();
+        private final Set<SlotPos> blacklisted = new HashSet<>();
 
         public Impl(InventoryContents contents, SmartInventory inv,
                     Type type, int startRow, int startColumn) {
@@ -91,23 +92,21 @@ public interface SlotIterator {
                     this.started = true;
                 }
                 else {
-                    switch(type) {
-                        case HORIZONTAL:
+                    switch (type) {
+                        case HORIZONTAL -> {
                             column--;
-
-                            if(column == 0) {
+                            if (column == 0) {
                                 column = inv.getColumns() - 1;
                                 row--;
                             }
-                            break;
-                        case VERTICAL:
+                        }
+                        case VERTICAL -> {
                             row--;
-
-                            if(row == 0) {
+                            if (row == 0) {
                                 row = inv.getRows() - 1;
                                 column--;
                             }
-                            break;
+                        }
                     }
                 }
             }
@@ -128,19 +127,17 @@ public interface SlotIterator {
                     this.started = true;
                 }
                 else {
-                    switch(type) {
-                        case HORIZONTAL:
+                    switch (type) {
+                        case HORIZONTAL -> {
                             column = ++column % inv.getColumns();
-
-                            if(column == 0)
+                            if (column == 0)
                                 row++;
-                            break;
-                        case VERTICAL:
+                        }
+                        case VERTICAL -> {
                             row = ++row % inv.getRows();
-
-                            if(row == 0)
+                            if (row == 0)
                                 column++;
-                            break;
+                        }
                     }
                 }
             }
@@ -199,7 +196,7 @@ public interface SlotIterator {
         }
 
         private boolean canPlace() {
-            return !blacklisted.contains(SlotPos.of(row, column)) && (allowOverride || !this.get().isPresent());
+            return !blacklisted.contains(SlotPos.of(row, column)) && (allowOverride || this.get().isEmpty());
         }
 
     }

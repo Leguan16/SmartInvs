@@ -41,7 +41,7 @@ public class InventoryManager {
     private final Map<UUID, InventoryContents> contents;
 
     private final List<InventoryOpener> defaultOpeners;
-    private List<InventoryOpener> openers;
+    private final List<InventoryOpener> openers;
 
     public InventoryManager(JavaPlugin plugin) {
         this.plugin = plugin;
@@ -69,7 +69,7 @@ public class InventoryManager {
                 .filter(opener -> opener.supports(type))
                 .findAny();
 
-        if (!opInv.isPresent()) {
+        if (opInv.isEmpty()) {
             opInv = this.defaultOpeners.stream()
                     .filter(opener -> opener.supports(type))
                     .findAny();
