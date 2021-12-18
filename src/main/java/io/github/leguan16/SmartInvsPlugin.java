@@ -1,4 +1,4 @@
-package fr.minuskube.inv;
+package io.github.leguan16;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

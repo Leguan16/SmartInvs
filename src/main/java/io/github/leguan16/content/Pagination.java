@@ -1,6 +1,6 @@
-package fr.minuskube.inv.content;
+package io.github.leguan16.content;
 
-import fr.minuskube.inv.ClickableItem;
+import io.github.leguan16.ClickableItem;
 
 import java.util.Arrays;
 

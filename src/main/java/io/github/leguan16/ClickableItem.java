@@ -1,4 +1,4 @@
-package fr.minuskube.inv;
+package io.github.leguan16;
 
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;

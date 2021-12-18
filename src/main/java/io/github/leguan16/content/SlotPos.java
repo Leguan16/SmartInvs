@@ -1,4 +1,4 @@
-package fr.minuskube.inv.content;
+package io.github.leguan16.content;
 
 public class SlotPos {
 

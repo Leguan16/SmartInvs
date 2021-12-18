@@ -1,8 +1,8 @@
-package fr.minuskube.inv.opener;
+package io.github.leguan16.opener;
 
-import fr.minuskube.inv.ClickableItem;
-import fr.minuskube.inv.SmartInventory;
-import fr.minuskube.inv.content.InventoryContents;
+import io.github.leguan16.ClickableItem;
+import io.github.leguan16.SmartInventory;
+import io.github.leguan16.content.InventoryContents;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;

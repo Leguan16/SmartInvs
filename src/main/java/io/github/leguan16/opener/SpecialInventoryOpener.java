@@ -1,8 +1,8 @@
-package fr.minuskube.inv.opener;
+package io.github.leguan16.opener;
 
 import com.google.common.collect.ImmutableList;
-import fr.minuskube.inv.InventoryManager;
-import fr.minuskube.inv.SmartInventory;
+import io.github.leguan16.InventoryManager;
+import io.github.leguan16.SmartInventory;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

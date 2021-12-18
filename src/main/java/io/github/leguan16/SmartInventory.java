@@ -1,8 +1,8 @@
-package fr.minuskube.inv;
+package io.github.leguan16;
 
-import fr.minuskube.inv.content.InventoryContents;
-import fr.minuskube.inv.content.InventoryProvider;
-import fr.minuskube.inv.opener.InventoryOpener;
+import io.github.leguan16.content.InventoryContents;
+import io.github.leguan16.content.InventoryProvider;
+import io.github.leguan16.opener.InventoryOpener;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.inventory.InventoryCloseEvent;
