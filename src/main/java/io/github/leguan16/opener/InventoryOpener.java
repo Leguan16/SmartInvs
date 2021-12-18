@@ -9,7 +9,19 @@ import org.bukkit.inventory.Inventory;
 
 public interface InventoryOpener {
 
+    /**
+     * Opens the inventory for a player
+     * @param inv the inventory the player should be opened
+     * @param player the player the inventory should be opened
+     * @return the inventory which gets opened
+     */
     Inventory open(SmartInventory inv, Player player);
+
+    /**
+     * Checks if the inventory type is supported
+     * @param type type of inventory
+     * @return true if the inventory type is supported, false otherwise
+     */
     boolean supports(InventoryType type);
 
     default void fill(Inventory handle, InventoryContents contents) {

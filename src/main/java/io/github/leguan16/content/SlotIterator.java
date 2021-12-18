@@ -9,31 +9,105 @@ import java.util.Set;
 
 public interface SlotIterator {
 
+
+    /**
+     * Available types of the slot iterator
+     * Whether the slot iterator is horizontal or vertical
+     */
     enum Type {
         HORIZONTAL,
         VERTICAL
     }
 
+    /**
+     *
+     * @return clickable item
+     */
     Optional<ClickableItem> get();
 
+    /**
+     *
+     * @param item item to be set
+     * @return the updated slot iterator
+     */
     SlotIterator set(ClickableItem item);
 
+    /**
+     *
+     * @return updated slot iterator
+     */
     SlotIterator previous();
+
+    /**
+     *
+     * @return updated slot iterator
+     */
     SlotIterator next();
 
+    /**
+     * Add an item to the blacklist
+     * @param row row number of item to be blacklisted
+     * @param column column number of item to be blacklisted
+     * @return updated slot iterator
+     */
     SlotIterator blacklist(int row, int column);
+
+    /**
+     * Add an item to the blacklist
+     * @param slotPos slot position of item to be blacklisted
+     * @return updated slot iterator
+     */
     SlotIterator blacklist(SlotPos slotPos);
 
+    /**
+     *
+     * @return current row
+     */
     int row();
+
+    /**
+     * Set the current row
+     * @param row the new row
+     * @return the updated slot iterator
+     */
     SlotIterator row(int row);
 
+    /**
+     *
+     * @return the current row
+     */
     int column();
+
+    /**
+     * Set the current column
+     * @param column the new column
+     * @return the updated slot iterator
+     */
     SlotIterator column(int column);
 
+    /**
+     * returns a boolean if the iterator has already started
+     * @return true if already started, false otherwise
+     */
     boolean started();
+
+    /**
+     * returns a boolean if the iterator has already reached the end
+     * @return true if end reached, false otherwise
+     */
     boolean ended();
 
+    /**
+     * returns a boolean if overriding is allowed
+     * @return ture if allowed, false otherwise
+     */
     boolean doesAllowOverride();
+
+    /**
+     * set if overriding is allowed
+     * @param override true to allow overriding, false otherwise
+     * @return the updated slot iterator
+     */
     SlotIterator allowOverride(boolean override);
 
 
