@@ -14,43 +14,191 @@ import java.util.UUID;
 
 public interface InventoryContents {
 
+    /**
+     * Returns the inventory
+     * @return inventory
+     */
     SmartInventory inventory();
+
+    /**
+     * Returns pages
+     * @return current page
+     */
     Pagination pagination();
 
+    /**
+     * Returns a SlotIterator
+     * @param id id of SlotIterator to get
+     * @return SlotIterator of id
+     */
     Optional<SlotIterator> iterator(String id);
 
+    /**
+     * Creates a new SlotIterator
+      * @param id id of SlotIterator
+     * @param type type of SlotIterator
+     * @param startRow startRow of SlotIterator
+     * @param startColumn startColumn of SlotIterator
+     * @return a new SlotIterator
+     */
     SlotIterator newIterator(String id, SlotIterator.Type type, int startRow, int startColumn);
+
+    /**
+     * Creates a new slot iterator
+     * @param type type of slot iterator
+     * @param startRow starting row of slot iterator
+     * @param startColumn starting column of slot iterator
+     * @return a new slot iterator
+     */
     SlotIterator newIterator(SlotIterator.Type type, int startRow, int startColumn);
 
+    /**
+     * Creates a new SlotIterator
+     * @param type type of SlotIterator
+     * @param startPos starting position of slot iterator
+     * @return a new SlotIterator
+     */
     SlotIterator newIterator(String id, SlotIterator.Type type, SlotPos startPos);
+
+    /**
+     * Creates a new
+     * @param type type of slot iterator
+     * @param startPos starting position of slot iterator
+     * @return a new slot iterator
+     */
     SlotIterator newIterator(SlotIterator.Type type, SlotPos startPos);
 
+
+    /**
+     * returns the content of the inventory
+     * @return content of the inventory
+     */
     ClickableItem[][] all();
 
+    /**
+     * Returns the first empty slot pos of the inventory
+     * @return the slot pos of the first empty field as an Optional
+     */
     Optional<SlotPos> firstEmpty();
 
+    /**
+     * Gets the item of a specific position
+     * @param row row number
+     * @param column column number
+     * @return optional of clickable item
+     */
     Optional<ClickableItem> get(int row, int column);
+
+    /**
+     * Gets the item of a specific position
+     * @param slotPos slot pos of the item
+     * @return optional of clickable item
+     */
     Optional<ClickableItem> get(SlotPos slotPos);
 
+    /**
+     * set an item in the inventory
+     * @param row row number
+     * @param column column number
+     * @param item item which should be set at the position
+     * @return the updated inventory
+     */
     InventoryContents set(int row, int column, ClickableItem item);
+
+    /**
+     * set an item in the inventory
+     * @param slotPos slot pos of the inventory
+     * @param item item which should be set at the position
+     * @return the updated inventory
+     */
     InventoryContents set(SlotPos slotPos, ClickableItem item);
 
+    /**
+     *
+     * @param item item which should be added to the inventory
+     * @return the updated inventory
+     */
     InventoryContents add(ClickableItem item);
 
+    /**
+     * fills an inventory with an item
+     * @param item item which should be set on each position
+     * @return the updated inventory
+     */
     InventoryContents fill(ClickableItem item);
+
+    /**
+     * fills a row with an item
+     * @param row the row which should be filled
+     * @param item item which should be set on each position of the row
+     * @return the updated inventory
+     */
     InventoryContents fillRow(int row, ClickableItem item);
+
+    /**
+     * fills a column with an item
+     * @param column the column which should be filled
+     * @param item item which should be set on each position of the column
+     * @return the updated inventory
+     */
     InventoryContents fillColumn(int column, ClickableItem item);
+
+    /**
+     * fills the border with an item
+     * @param item item which should be set on each position of the border
+     * @return the updated inventory
+     */
     InventoryContents fillBorders(ClickableItem item);
 
+    /**
+     * fills the inventory with an item ordered in a rectangle
+     * @param fromColumn the column of the position of the first corner of the rectangle
+     * @param fromRow the row of the position of the first corner of the rectangle
+     * @param toColumn the column of the position of the second corner of the rectangle
+     * @param toRow the row of the position of the second corner of the rectangle
+     * @param item item which should be set on each position of the rect
+     * @return the updated inventory
+     */
     InventoryContents fillRect(int fromRow, int fromColumn,
                                int toRow, int toColumn, ClickableItem item);
+
+    /**
+     * fills the inventory with an item ordered in a rectangle
+     * @param fromPos the slot pos of the first corner of the rectangle
+     * @param toPos the slot pos of the second corner of the rectangle
+     * @param item item which should be set on each position of the rect
+     * @return the updated inventory
+     */
     InventoryContents fillRect(SlotPos fromPos, SlotPos toPos, ClickableItem item);
 
+    /**
+     * Get a property
+     * @param name name of the property
+     * @param <T>
+     * @return property
+     */
     <T> T property(String name);
+
+    /**
+     * Get a property
+     * @param name name of the property
+     * @param <T>
+     * @param def
+     * @return property
+     */
     <T> T property(String name, T def);
 
+    /**
+     * Set a property
+     * @param name name of the new property
+     * @param value value of the property
+     * @return the updated inventory
+     */
     InventoryContents setProperty(String name, Object value);
 
+    /**
+     * Implementation class of InventoryContents
+     */
     class Impl implements InventoryContents {
 
         private final SmartInventory inv;
