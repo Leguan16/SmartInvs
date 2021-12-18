@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    compile 'io.github.leguan16:smartInvs:1.1.0'
+    compile 'io.github.leguan16:smartInvs:1.2.0'
 }
 ```
 
@@ -52,7 +52,7 @@ dependencies {
 <dependency>
   <groupId>io.github.leguan16</groupId>
   <artifactId>smartInvs</artifactId>
-  <version>1.1.0</version>
+  <version>1.2.0</version>
 </dependency>
 ```
 
