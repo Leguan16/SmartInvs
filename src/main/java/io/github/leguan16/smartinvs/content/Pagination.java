@@ -1,6 +1,6 @@
-package io.github.leguan16.content;
+package io.github.leguan16.smartinvs.content;
 
-import io.github.leguan16.ClickableItem;
+import io.github.leguan16.smartinvs.ClickableItem;
 
 import java.util.Arrays;
 

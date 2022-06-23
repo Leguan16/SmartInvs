@@ -1,8 +1,8 @@
-package io.github.leguan16.opener;
+package io.github.leguan16.smartinvs.opener;
 
 import com.google.common.collect.ImmutableList;
-import io.github.leguan16.InventoryManager;
-import io.github.leguan16.SmartInventory;
+import io.github.leguan16.smartinvs.InventoryManager;
+import io.github.leguan16.smartinvs.SmartInventory;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

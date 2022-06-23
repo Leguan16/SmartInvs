@@ -1,4 +1,4 @@
-package io.github.leguan16;
+package io.github.leguan16.smartinvs;
 
 import java.util.function.Consumer;
 

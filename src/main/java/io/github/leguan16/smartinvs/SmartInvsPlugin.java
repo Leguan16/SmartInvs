@@ -1,4 +1,4 @@
-package io.github.leguan16;
+package io.github.leguan16.smartinvs;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
