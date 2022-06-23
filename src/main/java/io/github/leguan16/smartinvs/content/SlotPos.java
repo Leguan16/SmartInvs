@@ -1,4 +1,4 @@
-package io.github.leguan16.content;
+package io.github.leguan16.smartinvs.content;
 
 public class SlotPos {
 

@@ -1,7 +1,7 @@
-package io.github.leguan16.content;
+package io.github.leguan16.smartinvs.content;
 
-import io.github.leguan16.ClickableItem;
-import io.github.leguan16.SmartInventory;
+import io.github.leguan16.smartinvs.ClickableItem;
+import io.github.leguan16.smartinvs.SmartInventory;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;

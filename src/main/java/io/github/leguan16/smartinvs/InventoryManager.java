@@ -1,9 +1,9 @@
-package io.github.leguan16;
+package io.github.leguan16.smartinvs;
 
-import io.github.leguan16.content.InventoryContents;
-import io.github.leguan16.opener.ChestInventoryOpener;
-import io.github.leguan16.opener.InventoryOpener;
-import io.github.leguan16.opener.SpecialInventoryOpener;
+import io.github.leguan16.smartinvs.content.InventoryContents;
+import io.github.leguan16.smartinvs.opener.ChestInventoryOpener;
+import io.github.leguan16.smartinvs.opener.InventoryOpener;
+import io.github.leguan16.smartinvs.opener.SpecialInventoryOpener;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

@@ -1,7 +1,7 @@
-package io.github.leguan16.content;
+package io.github.leguan16.smartinvs.content;
 
-import io.github.leguan16.ClickableItem;
-import io.github.leguan16.SmartInventory;
+import io.github.leguan16.smartinvs.ClickableItem;
+import io.github.leguan16.smartinvs.SmartInventory;
 
 import java.util.HashSet;
 import java.util.Optional;
