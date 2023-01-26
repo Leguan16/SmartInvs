@@ -1,4 +1,4 @@
-package io.github.leguan16.smartinvs;
+package at.noahb.smartinvs;
 
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;

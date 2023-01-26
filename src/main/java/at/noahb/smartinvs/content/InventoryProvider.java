@@ -1,4 +1,4 @@
-package io.github.leguan16.smartinvs.content;
+package at.noahb.smartinvs.content;
 
 import org.bukkit.entity.Player;
 

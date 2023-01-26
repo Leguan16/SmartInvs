@@ -1,8 +1,8 @@
-package io.github.leguan16.smartinvs;
+package at.noahb.smartinvs;
 
-import io.github.leguan16.smartinvs.content.InventoryContents;
-import io.github.leguan16.smartinvs.content.InventoryProvider;
-import io.github.leguan16.smartinvs.opener.InventoryOpener;
+import at.noahb.smartinvs.content.InventoryContents;
+import at.noahb.smartinvs.content.InventoryProvider;
+import at.noahb.smartinvs.opener.InventoryOpener;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.inventory.InventoryCloseEvent;
