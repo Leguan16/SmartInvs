@@ -1,8 +1,8 @@
-package io.github.leguan16.smartinvs.opener;
+package at.noahb.smartinvs.opener;
 
+import at.noahb.smartinvs.SmartInventory;
 import com.google.common.base.Preconditions;
-import io.github.leguan16.smartinvs.InventoryManager;
-import io.github.leguan16.smartinvs.SmartInventory;
+import at.noahb.smartinvs.InventoryManager;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
